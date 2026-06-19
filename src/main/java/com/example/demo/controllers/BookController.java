@@ -23,10 +23,20 @@ public class BookController {
 
         boolean deleted =  bookService.deleteBook(id);
 
-        return new ApiResponse(
-                "Successfully deleted Book with id: " + id,
-                "00",
-                deleted
-        );
+        if(deleted){
+            return new ApiResponse(
+                    "Successfully deleted Book with id: " + id,
+                    "00",
+                    deleted
+            );
+        }
+        else {
+            return new ApiResponse(
+                    "Unable to delete Book with id: " + id,
+                    "E01",
+                    deleted
+            );
+        }
+
     }
 }
