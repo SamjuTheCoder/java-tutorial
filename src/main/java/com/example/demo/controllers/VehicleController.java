@@ -27,4 +27,10 @@ public class VehicleController {
     public String updateVehicles(@PathVariable int id, @RequestBody Vehicle vehicle) {
         return vehicleService.vehicleUpdate(id, vehicle);
     }
+
+    // patch vehicles
+    @PatchMapping("/patch/{id}")
+    public String patchVehicles(@PathVariable int id, @RequestBody Vehicle vehicle) {
+        return vehicleService.vehiclePatchUpdate(id, vehicle);
+    }
 }

@@ -22,7 +22,7 @@ public class VehicleService {
         );
         vehicles.add(
                 new Vehicle(
-                    1,
+                    2,
                     "Mercedes",
                     "White",
                     "GLK"
@@ -37,11 +37,32 @@ public class VehicleService {
     public String vehicleUpdate(int id, Vehicle vehicle) {
         for (Vehicle vehicle1 : vehicles) {
             if (vehicle1.getId() == id) {
-                vehicle1.setName(vehicle1.getName());
-                vehicle1.setColor(vehicle1.getColor());
-                vehicle1.setMake(vehicle1.getMake());
+                vehicle1.setName(vehicle.getName());
+                vehicle1.setColor(vehicle.getColor());
+                vehicle1.setMake(vehicle.getMake());
 
                 return "Vehicle updated";
+            }
+        }
+
+        return "Vehicle not found!";
+    }
+
+    public String vehiclePatchUpdate(int id, Vehicle vehicle) {
+        for (Vehicle vehicle1 : vehicles) {
+            if (vehicle1.getId() == id) {
+
+                if(vehicle1.getName() != null) {
+                    vehicle1.setName(vehicle.getName());
+                }
+                if(vehicle1.getColor() != null) {
+                    vehicle1.setColor(vehicle.getColor());
+                }
+                if(vehicle1.getMake() != null) {
+                    vehicle1.setMake(vehicle.getMake());
+                }
+
+                return "Vehicle patched successfully";
             }
         }
 
