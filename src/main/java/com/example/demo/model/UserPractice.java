@@ -1,8 +1,13 @@
 package com.example.demo.model;
 
-
+import com.example.demo.enums.Gender;
+import com.example.demo.enums.MaritalStatus;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.hibernate.engine.jdbc.Size;
 
 
 @Setter
@@ -10,17 +15,13 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 
-
 @Entity
 @Table(name = "tbl_users_practice")
 public class UserPractice {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userId;
-
-    @Column(unique = true, nullable = false, length = 80)
-    private String userName;
+    private Long id;
 
     @Column(unique = false, nullable = false, length = 25)
     private String firstName;
@@ -29,7 +30,10 @@ public class UserPractice {
     private String lastName;
 
     @Column(unique = false, nullable = false, length = 8)
-    private String gender;
+    private Gender gender;
+
+    @Column(unique = false, nullable = false, length = 8)
+    private String maritalStatus;
 
     @Column(unique = false, nullable = false, length = 15)
     private String dateOfBirth;
@@ -37,31 +41,10 @@ public class UserPractice {
     @Column(unique = true, nullable = false, length = 100)
     private String email;
 
-    @Column(unique = false, nullable = false, length = 50)
-    private String password;
-
-    @Column(unique = false, nullable = false, length = 50)
-    private String confirmPassword;
-
     @Column(unique = true, nullable = false, length = 20)
     private String phoneNumber;
 
     @Column(unique = false, nullable = false, length = 100)
-    private String firstAddress;
-
-    @Column(unique = false, nullable = true, length = 100)
-    private String secondAddress;
-
-    @Column(unique = false, nullable = false, length = 100)
-    private String city;
-
-    @Column(unique = false, nullable = false, length = 100)
-    private String state;
-
-    @Column(unique = false, nullable = false, length = 60)
-    private String country;
-
-    @Column(unique = false, nullable = true, length = 15)
-    private String postalCode;
+    private String Address;
 
 }
