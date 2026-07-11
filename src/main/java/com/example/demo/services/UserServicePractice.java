@@ -36,6 +36,6 @@ public class UserServicePractice {
 
     //list all records
     public List<UserPractice> findAll() {
-        return userRepositoryPractice.findAll();
+         return userRepositoryPractice.findAll();
     }
 }
