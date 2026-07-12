@@ -5,7 +5,6 @@ import lombok.Setter;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
-
 import org.w3c.dom.Text;
 import java.sql.Timestamp;
 import java.util.Date;
@@ -57,7 +56,7 @@ public class StudentScholarship {
     @Column(unique = false, nullable = false, length = 150)
     private Text reason;
     @Column(unique = false, nullable = false, length = 20)
-    private String Passport;
+    private String passport;
     @Column(unique = false, nullable = false, length = 200)
     private String admissionLetter;
     @Column(unique = false, nullable = false, length = 20)

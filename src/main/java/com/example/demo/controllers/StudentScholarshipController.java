@@ -33,7 +33,7 @@ public class StudentScholarshipController {
   @GetMapping("/list_users")
     public ApiResponse listStudentScholarships(){
 
-    List<StudentScholarship> studentScholarship = studentScholarshipService.findAllStudentScholarship();
+    List<StudentScholarship> studentScholarship = studentScholarshipService.findAll();
 
     return new ApiResponse(
               "Student Scholarship Successfully Listed",

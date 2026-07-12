@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.w3c.dom.Text;
-
 import java.sql.Timestamp;
 import java.util.Date;
 
@@ -31,7 +30,7 @@ public class StudentScholarshipRequest {
     private Double cGPA;
     private String scholarshipType;
     private Text reason;
-    private String Passport;
+    private String passport;
     private String admissionLetter;
     private String schoolIdCard;
     private String status;

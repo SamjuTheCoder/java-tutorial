@@ -48,7 +48,7 @@ public class StudentScholarshipService {
     }
 
     //list all records
-    public List<StudentScholarship> findAllStudentScholarship () {
+    public List<StudentScholarship> findAll () {
         return studentScholarshipRepository.findAll();
     }
 }
