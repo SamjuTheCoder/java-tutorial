@@ -4,8 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.w3c.dom.Text;
-import java.sql.Timestamp;
 import java.util.Date;
 
 @Setter
@@ -17,7 +15,7 @@ public class StudentScholarshipRequest {
     private String firstName;
     private String lastName;
     private String gender;
-    private Date dateOfBirth;
+    private String dateOfBirth;
     private String email;
     private String phoneNumber;
     private String nationality;
@@ -27,13 +25,13 @@ public class StudentScholarshipRequest {
     private String department;
     private String course;
     private String studentId;
-    private Double cGPA;
+    private String cGPA;
     private String scholarshipType;
-    private Text reason;
+    private String reason;
     private String passport;
     private String admissionLetter;
     private String schoolIdCard;
     private String status;
-    private Timestamp createdDate;
+    private String createdDate;
 
 }

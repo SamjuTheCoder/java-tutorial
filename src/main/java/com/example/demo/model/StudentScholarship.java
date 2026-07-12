@@ -5,10 +5,8 @@ import lombok.Setter;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
-import org.w3c.dom.Text;
 import java.sql.Timestamp;
 import java.util.Date;
-import org.hibernate.engine.jdbc.Size;
 
 @Setter
 @Getter
@@ -30,7 +28,7 @@ public class StudentScholarship {
     @Column(unique = false, nullable = false, length = 8)
     private String gender;
     @Column(unique = false, nullable = false, length = 12)
-    private Date dateOfBirth;
+    private String dateOfBirth;
     @Column(unique = true, nullable = false, length = 100)
     private String email;
     @Column(unique = true, nullable = false, length = 20)
@@ -50,11 +48,11 @@ public class StudentScholarship {
     @Column(unique = true, nullable = false, length = 60)
     private String studentId;
     @Column(unique = false, nullable = false, length = 5)
-    private Double cGPA;
+    private String cGPA;
     @Column(unique = false, nullable = false, length = 50)
     private String scholarshipType;
     @Column(unique = false, nullable = false, length = 150)
-    private Text reason;
+    private String reason;
     @Column(unique = false, nullable = false, length = 20)
     private String passport;
     @Column(unique = false, nullable = false, length = 200)
@@ -64,6 +62,6 @@ public class StudentScholarship {
     @Column(unique = false, nullable = false, length = 50)
     private String status;
     @Column(unique = false, nullable = false, length = 15)
-    private Timestamp createdDate;
+    private String createdDate;
 
 }

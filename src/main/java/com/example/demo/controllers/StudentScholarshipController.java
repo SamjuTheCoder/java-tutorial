@@ -17,7 +17,7 @@ public class StudentScholarshipController {
       this.studentScholarshipService = studentScholarshipService;
   }
 
-  @PostMapping("/create_user")
+  @PostMapping("/create-student-scholarship-users")
     public ApiResponse createStudentScholarship (@RequestBody StudentScholarshipRequest studentScholarshipRequest) {
       StudentScholarship studentScholarshipCreated = studentScholarshipService.saveStudentScholarship(studentScholarshipRequest);
 
@@ -30,7 +30,7 @@ public class StudentScholarshipController {
 
   }
 
-  @GetMapping("/list_users")
+  @GetMapping("/list-student-scholarship-users")
     public ApiResponse listStudentScholarships(){
 
     List<StudentScholarship> studentScholarship = studentScholarshipService.findAll();
