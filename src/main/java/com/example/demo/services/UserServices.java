@@ -32,8 +32,18 @@ public class UserServices {
     }
 
     // list all records
-    public List<User> findAll() {
+    public List<User> findAllUsers() {
        return userRepository.findAll();
+    }
+
+    // delete record by id
+    public void deleteUserById(Long id) {
+       userRepository.deleteById(id);
+    }
+
+    // find record by id
+    public User getUserById(Long id) {
+       return userRepository.findById(id).orElse(null);
     }
 
 }

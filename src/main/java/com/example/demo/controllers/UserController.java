@@ -13,7 +13,7 @@ import java.util.List;
 @RequestMapping("/api/v1")
 public class UserController {
 
-    private UserServices userServices;
+    private final UserServices userServices;
 
     public UserController(UserServices userServices) {
         this.userServices = userServices;
@@ -33,10 +33,44 @@ public class UserController {
     @GetMapping("/list-users")
     public ApiResponse listUsers() {
 
-        List<User> user = userServices.findAll();
+        List<User> user = userServices.findAllUsers();
 
         return new ApiResponse(
                 "Successfully listed!",
+                "00",
+                user
+        );
+    }
+
+    // delete user
+    @DeleteMapping("/delete-user/{id}")
+    public ApiResponse deleteUserById(@PathVariable  Long id){
+
+        userServices.deleteUserById(id);
+
+        return new ApiResponse(
+                "Successfully deleted!",
+                "00",
+                ""
+        );
+    }
+
+    // find record by id
+    @GetMapping("/find-user-byid/{id}")
+    public ApiResponse findUserById(@PathVariable  Long id){
+
+        User user = userServices.getUserById(id);
+
+        if(user == null){
+            return new ApiResponse(
+                    "RECORD NOT FOUND!",
+                    "E01",
+                    ""
+            );
+        }
+
+        return new ApiResponse(
+                "SUCCESSFULLY FIND USER BY ID",
                 "00",
                 user
         );
