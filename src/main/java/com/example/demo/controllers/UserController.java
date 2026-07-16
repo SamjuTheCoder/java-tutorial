@@ -3,6 +3,7 @@ package com.example.demo.controllers;
 import com.example.demo.enums.Gender;
 import com.example.demo.model.User;
 import com.example.demo.request.UserRequest;
+import com.example.demo.request.UserUpdateRequest;
 import com.example.demo.response.ApiResponse;
 import com.example.demo.services.UserServices;
 import org.springframework.web.bind.annotation.*;
@@ -73,6 +74,18 @@ public class UserController {
                 "SUCCESSFULLY FIND USER BY ID",
                 "00",
                 user
+        );
+    }
+
+    // update user record
+    @PutMapping("/update-user")
+    public ApiResponse updateUser(@RequestBody UserUpdateRequest userUpdateRequest){
+        userServices.updateUser(userUpdateRequest);
+
+        return new ApiResponse(
+                "Successfully updated!",
+                "00",
+                ""
         );
     }
 }
