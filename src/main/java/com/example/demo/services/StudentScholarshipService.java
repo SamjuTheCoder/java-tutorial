@@ -51,4 +51,14 @@ public class StudentScholarshipService {
     public List<StudentScholarship> findAll () {
         return studentScholarshipRepository.findAll();
     }
+
+    //delete record by Id
+    public void deleteStudentScholarshipById(Long id) {
+        studentScholarshipRepository.deleteById(id);
+    }
+
+    //find record by Id
+    public StudentScholarship findStudentScholarshipById(Long id) {
+        return studentScholarshipRepository.findById(id).orElse(null);
+    }
 }

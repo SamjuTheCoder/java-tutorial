@@ -19,7 +19,8 @@ public class StudentScholarshipController {
 
   @PostMapping("/create-student-scholarship-users")
     public ApiResponse createStudentScholarship (@RequestBody StudentScholarshipRequest studentScholarshipRequest) {
-      StudentScholarship studentScholarshipCreated = studentScholarshipService.saveStudentScholarship(studentScholarshipRequest);
+
+    StudentScholarship studentScholarshipCreated = studentScholarshipService.saveStudentScholarship(studentScholarshipRequest);
 
       return new ApiResponse(
               "student Scholarship Successfully Created",
@@ -41,5 +42,40 @@ public class StudentScholarshipController {
               studentScholarship
       );
   }
+
+  //delete user
+  @DeleteMapping("/delete-student-scholarship-application/{id}")
+  public ApiResponse deleteStudentScholarshipById(@PathVariable Long id){
+
+    studentScholarshipService.deleteStudentScholarshipById(id);
+
+    return new ApiResponse(
+            "successfully deleted",
+            "00",
+            true
+    );
+  }
+
+//find record by id
+@GetMapping("/find-student-scholarship-application-by-id/{id}")
+  public ApiResponse findStudentScholarshipById(@PathVariable Long id){
+
+    StudentScholarship studentScholarship = studentScholarshipService.findStudentScholarshipById(id);
+
+    if (studentScholarship == null){
+      return new ApiResponse(
+              "student scholarship record not found",
+              "E01",
+              false
+      );
+    }
+
+    return new ApiResponse(
+            "student scholarship record found",
+            "00",
+            studentScholarship
+
+    );
+}
 
 }
