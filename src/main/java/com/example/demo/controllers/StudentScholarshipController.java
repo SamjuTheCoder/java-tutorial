@@ -2,6 +2,7 @@ package com.example.demo.controllers;
 
 import com.example.demo.model.StudentScholarship;
 import com.example.demo.request.StudentScholarshipRequest;
+import com.example.demo.request.StudentScholarshipUpdateRequest;
 import com.example.demo.response.ApiResponse;
 import com.example.demo.services.StudentScholarshipService;
 import org.springframework.web.bind.annotation.*;
@@ -47,6 +48,17 @@ public class StudentScholarshipController {
   @DeleteMapping("/delete-student-scholarship-application/{id}")
   public ApiResponse deleteStudentScholarshipById(@PathVariable Long id){
 
+      StudentScholarship studentScholarship = studentScholarshipService.findStudentScholarshipById(id);
+
+      if (studentScholarship == null){
+          return new ApiResponse(
+                  "Record not found",
+                  "E01",
+                  false
+          );
+      }
+
+
     studentScholarshipService.deleteStudentScholarshipById(id);
 
     return new ApiResponse(
@@ -77,5 +89,18 @@ public class StudentScholarshipController {
 
     );
 }
+
+//update user record
+  @PutMapping("/update-student-scholarship-application")
+  public ApiResponse updateStudentScholarship(@RequestBody StudentScholarshipUpdateRequest studentScholarshipUpdateRequest){
+    studentScholarshipService.updateStudentScholarship(studentScholarshipUpdateRequest);
+
+    return new ApiResponse(
+            "Student Scholarship successfully updated",
+            "00",
+            true
+    );
+
+  }
 
 }

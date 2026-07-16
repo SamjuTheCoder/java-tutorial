@@ -3,6 +3,7 @@ package com.example.demo.services;
 import com.example.demo.model.StudentScholarship;
 import com.example.demo.request.StudentScholarshipRequest;
 import com.example.demo.repository.StudentScholarshipRepository;
+import com.example.demo.request.StudentScholarshipUpdateRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -52,13 +53,49 @@ public class StudentScholarshipService {
         return studentScholarshipRepository.findAll();
     }
 
-    //delete record by Id
+    //delete record by id
     public void deleteStudentScholarshipById(Long id) {
         studentScholarshipRepository.deleteById(id);
     }
 
-    //find record by Id
+    //find record by id
     public StudentScholarship findStudentScholarshipById(Long id) {
         return studentScholarshipRepository.findById(id).orElse(null);
     }
+
+    //update Student Scholarship record
+    public StudentScholarship updateStudentScholarship(StudentScholarshipUpdateRequest studentScholarshipUpdateRequest) {
+
+        //find the user that you want to update record for by id of the user - StudentScholarshipModel
+        StudentScholarship  studentScholarship = studentScholarshipRepository.findById(studentScholarshipUpdateRequest.getId()).orElse(null);
+
+        //use the data of the user to upload the record coming from the payload - StudentScholarshipUpdateRequest
+        //and save any changes made in the StudentScholarshipUpdateRequest
+        studentScholarship.setFirstName(studentScholarshipUpdateRequest.getFirstName());
+        studentScholarship.setLastName(studentScholarshipUpdateRequest.getLastName());
+        studentScholarship.setGender(studentScholarshipUpdateRequest.getGender());
+        studentScholarship.setDateOfBirth(studentScholarshipUpdateRequest.getDateOfBirth());
+        studentScholarship.setEmail(studentScholarshipUpdateRequest.getEmail());
+        studentScholarship.setPhoneNumber(studentScholarshipUpdateRequest.getPhoneNumber());
+        studentScholarship.setNationality(studentScholarshipUpdateRequest.getNationality());
+        studentScholarship.setState(studentScholarshipUpdateRequest.getState());
+        studentScholarship.setAddress(studentScholarshipUpdateRequest.getAddress());
+        studentScholarship.setSchoolName(studentScholarshipUpdateRequest.getSchoolName());
+        studentScholarship.setDepartment(studentScholarshipUpdateRequest.getDepartment());
+        studentScholarship.setCourse(studentScholarshipUpdateRequest.getCourse());
+        studentScholarship.setStudentId(studentScholarshipUpdateRequest.getStudentId());
+        studentScholarship.setCGPA(studentScholarshipUpdateRequest.getCGPA());
+        studentScholarship.setScholarshipType(studentScholarshipUpdateRequest.getScholarshipType());
+        studentScholarship.setReason(studentScholarshipUpdateRequest.getReason());
+        studentScholarship.setPassport(studentScholarshipUpdateRequest.getPassport());
+        studentScholarship.setAdmissionLetter(studentScholarshipUpdateRequest.getAdmissionLetter());
+        studentScholarship.setSchoolIdCard(studentScholarshipUpdateRequest.getSchoolIdCard());
+        studentScholarship.setStatus(studentScholarshipUpdateRequest.getStatus());
+        studentScholarship.setCreatedDate(studentScholarshipUpdateRequest.getCreatedDate());
+        return studentScholarshipRepository.save(studentScholarship);
+
+    }
+
 }
+
+
