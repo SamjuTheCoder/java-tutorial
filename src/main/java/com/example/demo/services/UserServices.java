@@ -29,6 +29,7 @@ public class UserServices {
        user.setGender(userRequest.getGender());
        user.setMaritalStatus(userRequest.getMaritalStatus());
        userRepository.save(user);
+
        return user;
     }
 
