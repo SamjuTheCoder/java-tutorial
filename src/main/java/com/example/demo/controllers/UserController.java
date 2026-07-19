@@ -2,6 +2,7 @@ package com.example.demo.controllers;
 
 import com.example.demo.enums.Gender;
 import com.example.demo.model.User;
+import com.example.demo.projections.UserProjection;
 import com.example.demo.request.UserRequest;
 import com.example.demo.request.UserUpdateRequest;
 import com.example.demo.response.ApiResponse;
@@ -86,6 +87,18 @@ public class UserController {
                 "Successfully updated!",
                 "00",
                 ""
+        );
+    }
+
+    @GetMapping("/list-users-projection")
+    public ApiResponse listUserProjection() {
+
+        List<UserProjection> userProjections = userServices.findUserProjections();
+
+        return new ApiResponse(
+                "Successfully listed user projections!",
+                "00",
+                userProjections
         );
     }
 }

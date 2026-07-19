@@ -1,6 +1,7 @@
 package com.example.demo.services;
 
 import com.example.demo.model.User;
+import com.example.demo.projections.UserProjection;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.request.UserRequest;
 import com.example.demo.request.UserUpdateRequest;
@@ -64,5 +65,11 @@ public class UserServices {
        return userRepository.save(user);
 
     }
+
+    // list all just name, email, phone
+    public List<UserProjection> findUserProjections() {
+       return userRepository.findAllBy();
+    }
+
 
 }
