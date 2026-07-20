@@ -1,6 +1,7 @@
 package com.example.demo.services;
 
 import com.example.demo.model.StudentScholarship;
+import com.example.demo.projections.StudentScholarshipProjection;
 import com.example.demo.request.StudentScholarshipRequest;
 import com.example.demo.repository.StudentScholarshipRepository;
 import com.example.demo.request.StudentScholarshipUpdateRequest;
@@ -96,6 +97,11 @@ public class StudentScholarshipService {
 
     }
 
+    //retrieve the projected field: firstName, lastName, email, phoneNumber
+    public List<StudentScholarshipProjection> findStudentScholarshipProjection() {
+        return studentScholarshipRepository.findAllStudentScholarshipProjection();
+
+    }
 }
 
 

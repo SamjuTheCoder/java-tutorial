@@ -1,6 +1,7 @@
 package com.example.demo.controllers;
 
 import com.example.demo.model.StudentScholarship;
+import com.example.demo.projections.StudentScholarshipProjection;
 import com.example.demo.request.StudentScholarshipRequest;
 import com.example.demo.request.StudentScholarshipUpdateRequest;
 import com.example.demo.response.ApiResponse;
@@ -101,6 +102,19 @@ public class StudentScholarshipController {
             true
     );
 
+  }
+
+  //retrieve student scholarship projection
+  @GetMapping("/retrieve-student-scholarship-projection")
+  public ApiResponse retrieveStudentScholarshipProjection(){
+
+    List<StudentScholarshipProjection> studentScholarshipProjection = studentScholarshipService.findStudentScholarshipProjection();
+
+    return new ApiResponse(
+          "Student Scholarship Projection Successfully Retrieved",
+          "00",
+          studentScholarshipProjection
+    );
   }
 
 }
