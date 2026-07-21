@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class StudentTableService {
 
-    //user repository interface
+    //student table repository interface
     private final StudentTableRepository studentTableRepository;
 
     //constructor injection

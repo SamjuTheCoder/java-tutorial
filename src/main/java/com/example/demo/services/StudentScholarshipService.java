@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 public class StudentScholarshipService {
 
-    //user repository interface
+    //student scholarship repository interface
     private final StudentScholarshipRepository studentScholarshipRepository;
 
     //constructor injection
