@@ -1,14 +1,16 @@
 package com.example.demo.projections;
 
+//This is the StudentScholarshipProjection class
 public class StudentScholarshipProjection {
-    private String firstName;
+    private String firstName; //create a location that will store the firstName
     private String lastName;
     private String email;
     private String phoneNumber;
 
+    //this is the class constructor
 public StudentScholarshipProjection(String firstName, String lastName, String email, String phoneNumber) {
-    this.firstName = firstName;
-    this.lastName = lastName;
+    this.firstName = firstName; //Store the value passed into the constructor in this object's firstName field.
+    this.lastName = lastName; //this.lasName(field. instance variable), lastName(parameter)
     this.email = email;
     this.phoneNumber = phoneNumber;
     }
