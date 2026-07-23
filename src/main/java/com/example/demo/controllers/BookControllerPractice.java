@@ -20,7 +20,7 @@ public class BookControllerPractice {
         this.bookServicePractice = bookServicePractice;
     }
 
-    @DeleteMapping("/delete-book/{id}")
+    @DeleteMapping("/deletebookspractice/{id}")
     public ApiResponse deleteBookPractice(@PathVariable Long id) {
         boolean deleted = bookServicePractice.deleteBookPractice(id);
 

@@ -1,0 +1,43 @@
+package com.example.demo.response;
+
+public class ApiResponsePractice {
+    private String message; // success, login failed
+    private String status; // 00, E0, 01
+    private Object data;
+
+    // constructor for api response
+    public ApiResponsePractice( String message, String status, Object data) {
+        this.message = message;
+        this.status = status;
+        this.data = data;
+    }
+
+    // getter and setters
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
+    }
+}
+
+
+
