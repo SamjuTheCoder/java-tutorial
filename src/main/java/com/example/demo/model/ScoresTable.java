@@ -26,4 +26,8 @@ public class ScoresTable {
     @Column(nullable = false, length = 50)
     private String grade;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "student_id")
+    private StudentTable studentTable;
+
 }

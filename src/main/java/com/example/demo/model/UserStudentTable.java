@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import com.example.demo.enums.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -18,12 +19,16 @@ public class UserStudentTable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @Column(nullable = false, unique = false, length = 50)
     private String userName;
     @Column(nullable = false, length = 50)
     private String password;
     @Column(nullable = false, length = 100)
-    private String role;
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
+    @OneToOne(mappedBy = "userStudentTable")
+    private StudentTable studentTable;
+
 
 }
