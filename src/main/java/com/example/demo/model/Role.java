@@ -19,5 +19,5 @@ public class Role {
     private Long id;
 
     @Enumerated(EnumType.STRING)
-    private com.example.demo.enums.Role;
+    private com.example.demo.enums.Role roleName;
 }
