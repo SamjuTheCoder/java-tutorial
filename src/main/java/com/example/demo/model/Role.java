@@ -12,17 +12,12 @@ import lombok.Setter;
 @AllArgsConstructor
 
 @Entity
-@Table(name = "tbl_subjects_table")
-public class SubjectsTable {
-
+@Table(name = "role")
+public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = false, length = 50)
-    private String subjects;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "student_id")
-    private StudentTable studentTable;
+    @Enumerated(EnumType.STRING)
+    private com.example.demo.enums.Role;
 }
