@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -28,4 +30,17 @@ public class StudentTable {
     private String sex;
     @Column(nullable = false, unique = false, length = 50)
     private String department;
+
+    //Joining the StudentTable to the UserStudentTable  1:1 mapping
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private UserStudentTable userStudentTable;
+
+    //mapping the StudentTable to the ScoresTable 1:M mapping
+    @OneToMany(mappedBy = "studentTable")
+    private List<ScoresTable> scoresTable;
+
+    //mapping the StudentTable to the SubjectTable 1:M mapping
+    @OneToMany(mappedBy = "studentTable")
+    private List<SubjectsTable> subjectsTable;
 }

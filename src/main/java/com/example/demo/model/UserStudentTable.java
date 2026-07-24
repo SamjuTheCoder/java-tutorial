@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import com.example.demo.request.UserStudentTableRequest;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,5 +26,9 @@ public class UserStudentTable {
     private String password;
     @Column(nullable = false, length = 100)
     private String role;
+
+//mapping the UserStudentTable to the StudentTable 1:1 mapping
+    @OneToOne(mappedBy = "userStudentTable")
+    private StudentTable studentTable;
 
 }
