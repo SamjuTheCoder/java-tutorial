@@ -10,9 +10,8 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class UserStudentTableRequest {
     private String userName;
     private String password;
-    private Role role;
+    private String role;
 }

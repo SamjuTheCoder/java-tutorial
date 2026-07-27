@@ -6,6 +6,8 @@ import com.example.demo.services.ScoresTableService;
 import com.example.demo.response.ApiResponse;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/v1")
 
@@ -25,6 +27,19 @@ public class ScoresTableController {
                 "scores table successfully created",
                 "00",
                 scoresTableCreated
+
+        );
+    }
+
+    @GetMapping("/list-scores-table")
+    public ApiResponse listScoresTable() {
+
+        List<ScoresTable> scoresTable = scoresTableService.findAllScores();
+
+        return new ApiResponse(
+                "scores table successfully listed",
+                "00",
+                scoresTable
 
         );
     }

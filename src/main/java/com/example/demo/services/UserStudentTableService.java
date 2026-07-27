@@ -22,7 +22,7 @@ public class UserStudentTableService {
         UserStudentTable userStudentTable = new UserStudentTable();
         userStudentTable.setUserName(userStudentTableRequest.getUserName());
         userStudentTable.setPassword(userStudentTableRequest.getPassword());
-        userStudentTable.setRoles(userStudentTableRequest.getRoles());
+        userStudentTable.setRole(userStudentTableRequest.getRole());
         userStudentTableRepository.save(userStudentTable);
         return userStudentTable;
 

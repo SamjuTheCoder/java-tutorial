@@ -24,11 +24,9 @@ public class UserStudentTable {
     @Column(nullable = false, length = 50)
     private String password;
     @Column(nullable = false, length = 100)
-    @Enumerated(EnumType.STRING)
-    private Role role;
+    private String role;
 
     @OneToOne(mappedBy = "userStudentTable")
     private StudentTable studentTable;
-
 
 }
