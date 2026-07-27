@@ -1,6 +1,6 @@
 package com.example.demo.request;
 
-import com.example.demo.enums.Roles;
+import com.example.demo.enums.Role;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,5 +14,5 @@ import lombok.Setter;
 public class UserStudentTableRequest {
     private String userName;
     private String password;
-    private Roles roles;
+    private Role role;
 }

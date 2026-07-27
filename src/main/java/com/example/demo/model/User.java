@@ -1,14 +1,11 @@
 package com.example.demo.model;
 
 import com.example.demo.enums.Gender;
-import com.example.demo.enums.MaritalStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.engine.jdbc.Size;
-
 
 @Getter
 @Setter

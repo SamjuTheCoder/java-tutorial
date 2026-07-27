@@ -29,7 +29,7 @@ public class UserControllerPractice {
 }
 
 
-@GetMapping("/list-users")
+@GetMapping("/list-practice-users")
     public ApiResponsePractice listUserPractice() {
 
         List<UserPractice> userPractice = userServicePractice.findAll();
