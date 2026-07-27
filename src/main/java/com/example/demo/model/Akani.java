@@ -6,30 +6,31 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 
 @Entity
-@Table(name = "tbl_scores_table")
-public class ScoresTable {
+@Table(name = "tbl_akani")
+public class Akani {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false, unique = false, length = 50)
-    private String subject;
+    private String firstName;
     @Column(nullable = false, unique = false, length = 50)
-    private String score;
+    private String lastName;
     @Column(nullable = false, unique = false, length = 50)
-    private String grade;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "student_id")
-    private StudentTable studentTable;
-
+    private String gender;
+    @Column(nullable = false, unique = false, length = 50)
+    private String dateOfBirth;
+    @Column(nullable = false, unique = false, length = 50)
+    private String email;
+    @Column(nullable = false, unique = false, length = 50)
+    private String phoneNumber;
+    @Column(nullable = false, unique = false, length = 50)
+    private String address;
 }

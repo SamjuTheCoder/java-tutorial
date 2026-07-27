@@ -32,7 +32,7 @@ public class UserController {
         );
     }
 
-    @GetMapping("/list-users")
+    @GetMapping("/list-all-users")
     public ApiResponse listUsers() {
 
         List<User> user = userServices.findAllUsers();

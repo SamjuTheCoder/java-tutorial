@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 public class StudentScholarshipService {
 
-    //student scholarship repository interface
+    //repository interface
     private final StudentScholarshipRepository studentScholarshipRepository;
 
     //constructor injection
@@ -20,7 +20,7 @@ public class StudentScholarshipService {
         this.studentScholarshipRepository = studentScholarshipRepository;
     }
 
-    //save record to db
+    //this method saves data to db
     public StudentScholarship saveStudentScholarship(StudentScholarshipRequest studentScholarshipRequest) {
 
         StudentScholarship studentScholarship = new StudentScholarship();
