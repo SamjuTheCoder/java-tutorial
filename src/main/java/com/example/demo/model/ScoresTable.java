@@ -23,18 +23,18 @@ public class ScoresTable {
 
     @Column(nullable = false, unique = false, length = 50)
     private String subject;
-    @Column(nullable = false, length = 50)
+    @Column(nullable = false, unique = false, length = 50)
     private String score;
-    @Column(nullable = false, length = 50)
+    @Column(nullable = false, unique = false, length = 50)
     private String grade;
 
     //Joining the ScoresTable to the StudentTable M:1 mapping
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "student_id")
-    private List<StudentTable> studentTable;
+    private StudentTable studentTable;
 
-//joining the ScoresTable to the SubjectsTable
-    @ManyToOne
+//joining the ScoresTable to the SubjectsTable M:1
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "subjects_id")
-    private List<SubjectsTable> subjectsTable;
+    private SubjectsTable subjectsTable;
 }

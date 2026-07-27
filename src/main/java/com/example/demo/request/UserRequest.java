@@ -1,41 +1,19 @@
 package com.example.demo.request;
 
-public class UserRequest {
+import com.example.demo.enums.Gender;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Setter
+@Getter
+public class UserRequest {
     private String name;
     private String email;
     private String phone;
-
-    // constructor
-    public UserRequest(String name, String email, String phone) {
-        this.name = name;
-        this.email = email;
-        this.phone = phone;
-    }
-
-    // getter and setters
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
+    private Gender gender;
+    private String maritalStatus;
 }

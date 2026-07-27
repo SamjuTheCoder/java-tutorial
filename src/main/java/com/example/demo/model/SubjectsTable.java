@@ -25,11 +25,11 @@ public class SubjectsTable {
     private String subjects;
 
     //Joining the SubjectsTable to the StudentTable  M:1 mapping
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "student_id")
-    private List<StudentTable> studentTable;
+    private StudentTable studentTable;
 
-    //Mapping the SubjectsTable to the ScoresTable
+    //Mapping the SubjectsTable to the ScoresTable 1:M
     @OneToMany(mappedBy = "subjectsTable")
     private List<ScoresTable> scoresTable;
 }

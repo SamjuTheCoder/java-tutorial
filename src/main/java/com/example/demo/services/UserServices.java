@@ -1,20 +1,39 @@
 package com.example.demo.services;
 
+import com.example.demo.model.User;
+import com.example.demo.repository.UserRepository;
 import com.example.demo.request.UserRequest;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class UserServices {
 
-    private final List<UserRequest> userRequests = new ArrayList<>();
+    // user repository interface
+   private final UserRepository userRepository;
 
-    public List<UserRequest> createUser(UserRequest userRequest) {
-        userRequests.add(userRequest);
+   // constructor injection
+   public UserServices(UserRepository userRepository) {
+       this.userRepository = userRepository;
+   }
 
-        return userRequests;
+    // save record to db
+    public User saveUser(UserRequest userRequest) {
+
+       User user = new User();
+       user.setName(userRequest.getName());
+       user.setEmail(userRequest.getEmail());
+       user.setPhone(userRequest.getPhone());
+       user.setGender(userRequest.getGender());
+       user.setMaritalStatus(userRequest.getMaritalStatus());
+       userRepository.save(user);
+       return user;
+    }
+
+    // list all records
+    public List<User> findAll() {
+       return userRepository.findAll();
     }
 
 }

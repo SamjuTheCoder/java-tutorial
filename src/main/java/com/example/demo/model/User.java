@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import com.example.demo.enums.Gender;
+import com.example.demo.enums.MaritalStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,4 +30,5 @@ public class User {
     private Gender gender;
     @Column(length = 14, nullable = false, unique = true)
     private String phone;
+    private String maritalStatus;
 }

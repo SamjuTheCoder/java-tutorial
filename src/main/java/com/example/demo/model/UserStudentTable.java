@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import com.example.demo.enums.Roles;
 import com.example.demo.request.UserStudentTableRequest;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -25,7 +26,7 @@ public class UserStudentTable {
     @Column(nullable = false, length = 50)
     private String password;
     @Column(nullable = false, length = 100)
-    private String role;
+    private Roles roles; //Roles is an Enum
 
 //mapping the UserStudentTable to the StudentTable 1:1 mapping
     @OneToOne(mappedBy = "userStudentTable")

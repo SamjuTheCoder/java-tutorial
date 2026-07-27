@@ -15,6 +15,7 @@ import java.util.List;
 public class StudentScholarshipController {
 
   private final StudentScholarshipService studentScholarshipService;
+
   public StudentScholarshipController(StudentScholarshipService studentScholarshipService) {
       this.studentScholarshipService = studentScholarshipService;
   }
