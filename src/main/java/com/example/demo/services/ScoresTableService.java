@@ -1,9 +1,12 @@
 package com.example.demo.services;
 
 import com.example.demo.model.ScoresTable;
+import com.example.demo.model.StudentTable;
 import com.example.demo.request.ScoresTableRequest;
 import com.example.demo.repository.ScoresTableRepository;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class ScoresTableService {
@@ -26,5 +29,9 @@ public class ScoresTableService {
         scoresTableRepository.save(scoresTable);
         return scoresTable;
 
+    }
+
+    public List<ScoresTable> findAllScores() {
+        return scoresTableRepository.findAll();
     }
 }
